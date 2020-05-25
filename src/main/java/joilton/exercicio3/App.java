@@ -120,13 +120,17 @@ public class App extends Application {
     	titulo = new Label("RESERVE LUGARES ÚNICOS PARA SE HOSPEDAR E COISAS PARA FAZER");
     	lugar = new Label("ONDE");
     	// caixaLugar, dataEnt, dataSai , hospede;
-    	caixaLugar = new TextField("Em qualquer lugar");
+    	caixaLugar = new TextField();
+    	caixaLugar.setPromptText("Em qualquer lugar");
     	checkint = new Label("CHECK-IN");
-    	dataEnt = new TextField("dd/mm/aaaa");
+    	dataEnt = new TextField();
+    	dataEnt.setPromptText("dd/mm/aaaa");
     	checkout = new Label("CHECK-OUT");
-    	dataSai = new TextField("dd/mm/aaaa");
+    	dataSai = new TextField();
+    	dataSai.setPromptText("dd/mm/aaaa");
     	hospedes = new Label("HÓSPEDES");
-    	hospede = new TextField("Hóspedes");
+    	hospede = new TextField();
+    	hospede.setPromptText("Hóspedes");
     	busca = new Button("Buscar");
     	
     	
@@ -186,6 +190,18 @@ public class App extends Application {
 				alert.setContentText("No momento não esta funcionando");
 				
 				alert.showAndWait();
+			}
+		});
+		busca.setOnAction(new EventHandler<ActionEvent>() {
+			@Override
+			public void handle(ActionEvent event) {
+				Alert alert = new Alert(AlertType.CONFIRMATION);
+				alert.setTitle("Informando");
+				alert.setHeaderText(null);
+				alert.setContentText("Estamos Buscando");
+				
+				alert.showAndWait();
+				
 			}
 		});
 	}
